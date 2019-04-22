@@ -25,7 +25,8 @@ class ApplicationController < Sinatra::Base
 	end
 
 	post '/gossips/:id/edit' do
-		Gossip.update(params["gossip_author"], params["gossip_content"]).save
+
+		Gossip.update(params["id"], params["gossip_new_author"], params["gossip_modified"])
 
 	end
 

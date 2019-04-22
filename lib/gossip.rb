@@ -1,4 +1,3 @@
-
 require 'csv'
 class Gossip
 	 attr_reader :author, :content
@@ -29,13 +28,31 @@ class Gossip
 		db_content[id]
 	end
 
-	def self.update (new_author, number, modified_content)
-		csv_content = CSV.open("./db/gossip.csv", "w") 
-		csv_content.each_with_index do |csv|
-			csv_content[number] = ["new_author"]["modified_content"]
+	def self.update(id, author, content) 
+		# On va chercher le fichier CSV
+		# On le stocke dans une variable sous forme d'array
+		# il contient un array par ligne
+		rows_array = CSV.read('./db/gossip.csv')
+		#on parcourt l'array, each_with_index renvoie 
+		#l'index de chaque ligne du CSV 
+		rows_array.each.with_index do |index| 
+			# si l'index correspond à l'index du potin à modifier
+	  if  index == id.to_i
+	    # on modifie la première colonne, correspondante à l'auteur
+	    rows_array[index][0] = author
+	    # on modifie la deuxième colonne, correspondante au contenu
+	    rows_array[index][1] = content
+	  end
+	
+		# On reprend la ligne de la version modifiée
+		# On met à jour la ligne modifiée
+		CSV.open("./db/gossip.csv", 'wb') { |csv| rows_array.each{|row| csv << row}}
+
 		end
+
 	end
 
+	
 
 
 end

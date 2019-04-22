@@ -5,8 +5,8 @@
   <body>
     <h1>Edite un potin !</h1>
     <p>Balance ta modif via le formulaire ci-dessous</p>
-    <form action='/gossips/:id/edit' method='POST'>
-      Saisi ici ton nom :  <input type='text' name='gossip_author'/><br/>
+    <%="<form action='/gossips/#{params["id"]}/edit' method='POST'>"%>
+      Saisi ici ton nom :  <input type='text' name='gossip_new_author'/><br/>
       Balance le potin modifié: <input type='text' name='gossip_modified'/><br/>
       <input type='submit'/>
     </form>
