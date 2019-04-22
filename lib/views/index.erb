@@ -5,14 +5,18 @@
   <body>
     <h1>Bienvenue sur The Gossip Project !</h1>
     <a href="/gossips/new/">Créer un nouveau potin</a>
+    <!--On parcourt l'array all gossips avec l'index--> 
 	<% gossips.each_with_index do |gossip, index| %>
         <p>		
-          
+          <!--Elle nous renvoie chaque gossip avec son index-->
+          <!--On se sert de l'index pour créer le lien-->
 		 <a href="/gossips/<%= index %>"><%= "Potin nº #{index}"%> </a>	
           <%="-"%>
+          <!--On saffiche l'auteur et le contenu de chaque potin-->
           <%= gossip.author %><br/>
           <%= gossip.content %>
         </p>
+        <!--On ferme notre boucle-->
       <% end %>
 
 

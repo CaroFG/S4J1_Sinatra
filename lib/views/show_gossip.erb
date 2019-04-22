@@ -3,13 +3,17 @@
     <title>The Gossip Project :  page potin</title>
   </head>
   <body>
+    <!--On se sert du paramètre id pour afficher le numéro du potin--> 
     <h3><%= "Voici la page du potin nº #{params['id'].to_i}!" %></h3>
   <p>
-
+  <!--On crée une variable dans laquelle on insère la méthode gossip.find-->
+  <!--Cette méthode va cherche le potin par son id-->
      <% gossip_showed = Gossip.find(params['id'].to_i) %>
+   <!--On stocke l'auteur et le contenu du gossip dans des variables-->
+   <!--les contenus cherchés correspondent à l'index zéro  et un de la ligne "id" du fichier CSV-->
      <% author = gossip_showed[0] %>
      <% content = gossip_showed[1] %>
-
+<!--On affiche l'auteur et le contenu du potin-->
      <%= "Son auteur : #{author}" %><br/>
      <%= "Le contenu du potin : #{content}" %> 
     <p>
