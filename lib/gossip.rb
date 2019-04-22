@@ -35,7 +35,7 @@ class Gossip
 		rows_array = CSV.read('./db/gossip.csv')
 		#on parcourt l'array, each_with_index renvoie 
 		#l'index de chaque ligne du CSV 
-		rows_array.each.with_index do |index| 
+		rows_array.each_index do |index| 
 			# si l'index correspond à l'index du potin à modifier
 	  if  index == id.to_i
 	    # on modifie la première colonne, correspondante à l'auteur
@@ -46,7 +46,11 @@ class Gossip
 	
 		# On reprend la ligne de la version modifiée
 		# On met à jour la ligne modifiée
-		CSV.open("./db/gossip.csv", 'wb') { |csv| rows_array.each{|row| csv << row}}
+		CSV.open("./db/gossip.csv", 'wb') do |csv| 
+			rows_array.each do |row| 
+				csv << row
+			end
+		end
 
 		end
 

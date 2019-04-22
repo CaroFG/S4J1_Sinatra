@@ -27,6 +27,7 @@ class ApplicationController < Sinatra::Base
 	post '/gossips/:id/edit' do
 
 		Gossip.update(params["id"], params["gossip_new_author"], params["gossip_modified"])
+		redirect '/'
 
 	end
 
