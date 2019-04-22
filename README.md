@@ -3,7 +3,18 @@ THP S4J1
 ## Project details : THE GOSSIP PROJECT
 Group : Carolina FERREIRA
 
-## Exercise 1
-Quick explanation
-## Exercise 2
-Quick explanation# 
+##First approach to Sinatra, making a web version of The Gossip Project. 
+
+I went as far as to "2.7. Éditer un potin"
+
+##How to launch the app
+
+1. git clone
+2. bundle install
+3. shotgun 
+
+Cntrl + click on the server link
+
+
+ 
+
