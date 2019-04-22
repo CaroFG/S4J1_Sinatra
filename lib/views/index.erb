@@ -3,12 +3,12 @@
     <title>The Gossip Project</title>
   </head>
   <body>
-    <h1>Mon super site de gossip, depuis le dossier views !</h1>
+    <h1>Bienvenue sur The Gossip Project !</h1>
     <a href="/gossips/new/">Créer un nouveau potin</a>
 	<% gossips.each_with_index do |gossip, index| %>
         <p>		
           
-		 <a href="/gossips/<%= index %>"><%= index %> </a>	
+		 <a href="/gossips/<%= index %>"><%= "Potin nº #{index}"%> </a>	
           <%="-"%>
           <%= gossip.author %><br/>
           <%= gossip.content %>
