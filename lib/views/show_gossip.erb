@@ -14,7 +14,9 @@
      <%= "Le contenu du potin : #{content}" %> 
     <p>
 
- <a href="/">Revenir à la page d'accueil</a>
+
+   <%= "<a href=\"/gossips/#{params['id']}/edit\"> Modifier ce potin </a>" %> <br/>
+   <a href="/">Revenir à la page d'accueil</a>
   </body>
 </html>
 

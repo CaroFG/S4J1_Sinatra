@@ -3,11 +3,11 @@
     <title>Créer un potin</title>
   </head>
   <body>
-    <h1>Crée un potin !</h1>
-    <p>Balance ton potin via le formulaire ci-dessous</p>
-    <form action='/gossips/new/' method='POST'>
-      Saisi ici le numéro du potin que tu veux modifier :  <input type='text' name='gossip_by_index'/><br/>
-      Balance ton potin : <input type='text' name='gossip_content'/><br/>
+    <h1>Edite un potin !</h1>
+    <p>Balance ta modif via le formulaire ci-dessous</p>
+    <form action='/gossips/:id/edit' method='POST'>
+      Saisi ici ton nom :  <input type='text' name='gossip_author'/><br/>
+      Balance le potin modifié: <input type='text' name='gossip_modified'/><br/>
       <input type='submit'/>
     </form>
   </body>

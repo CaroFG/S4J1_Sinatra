@@ -29,6 +29,15 @@ class Gossip
 		db_content[id]
 	end
 
+	def self.update (new_author, number, modified_content)
+		csv_content = CSV.open("./db/gossip.csv", "w") 
+		csv_content.each_with_index do |csv|
+			csv_content[number] = ["new_author"]["modified_content"]
+		end
+	end
+
+
+
 end
 
 
